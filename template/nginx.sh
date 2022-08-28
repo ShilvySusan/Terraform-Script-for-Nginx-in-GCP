@@ -3,9 +3,7 @@ set -e
 echo "*****    Installing Nginx    *****"
 sudo apt-get update -y
 sudo apt-get install -y nginx certbot python3-certbot-nginx
-sudo ufw --force enable
 sudo ufw allow "Nginx Full"
-sudo ufw allow ssh
 sudo sh -c "echo 'shilvy soft nofile 30000' >> /etc/security/limits.conf"
 sudo sh -c "echo 'shilvy hard nofile 30000' >> /etc/security/limits.conf"
 sysctl -p
