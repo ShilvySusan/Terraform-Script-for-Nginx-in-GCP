@@ -1,26 +1,30 @@
-**# Steps to perform:**
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§:Terraform Script To Provision An Instance In GCP To Run Nginx With SSL And Redirection:§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-1. If you have already **gcloud cli** installed in your machine please authenticate your gcp account using "**gcloud auth login**", otherwise please install gcloud cli first and then authenticate.
+This script provisions a VM in which NGINX runs. Firewalls are opened for http, https and ssh access. VM's external ip( which is mapped to a domain) is used to access the webserver using a URL and via SSH. Nginx is configured to support 10000 connections and SSL certificates are enabled.
 
-2. Update vars in terraform.tfstate
+Initial Setup
+===============
 
-3. terraform init
+1. Create GCP account and use either default project or create new one.
+2. Create Service account and generate the authentication key, which will be stored in the local machine.
+3. If you have already installed **gcloud cli** in your machine, authenticate your GCP account using "**gcloud auth login**", otherwise install gcloud cli first and then configure using **gcloud init**.
+4. Install Terraform in your local machine.
+5. Generate ssh keys using **ssh-keygen** command, if you don't have the keys in local machine
 
-4. terraform plan -out 1.tfplan
+Run Script
+==========
 
-5. terraform apply "1.tfplan". Check if http:{external-ip-address} shows the default nginx page
+In CLI,
 
-6. Visit https://my.noip.com/dynamic-dns and update A record(IPV4) to the created external IP. This might take few minutes to propage the changes. 
+  1. terraform plan : Gives you the detailed outline of the resources going to be installed in GCP and notify if there are any mismatches in  configuration
+  2. terraform validate : Validates your configuration 
+  3. terraform apply : Provisions all the resources as mentioned in your script.
 
-7. SSH into the instance and run the following to generate SSL cert for the domain. Replace the domain and email with yours
+Output
+======
+Check  the output 2 ways:
 
-````
-```
-sudo certbot --nginx -n -d valhalla23.ddns.net --redirect --agree-tos --email kailaashbnair@test.com
-```
-```
-sudo service nginx reload
-```
-````
+ 1. Visit https://my.noip.com/dynamic-dns and update A record(IPV4) to the created external IP. This might take few minutes to propage the changes.
+ 2. SSH into the instance using username and ip/domain
 
-8. Visit https version of your site. 
+NB: If you want to use your personal domain, you can provision cloud dns( which doesn't comes under free tier) and add the namespaces from it as records in your private dns configuration.
