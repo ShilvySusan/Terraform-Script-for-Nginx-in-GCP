@@ -1,7 +1,7 @@
                            Terraform Script To Provision An Instance In GCP To Run Nginx With SSL And Redirection
                            ______________________________________________________________________________________
 
-This script provisions a VM in which NGINX runs. Firewalls are opened for http, https and ssh access. VM's external ip( which is mapped to a domain) is used to access the webserver using a URL and via SSH. Nginx is configured to support 10000 connections and SSL certificates are enabled.
+This script provisions a VM in which NGINX runs. Firewalls are opened for http, https and ssh access. VM's external ip( which is mapped to a domain) is used to access the webserver using a URL and via SSH. Nginx is configured to support 10000 connections and SSL certificates are enabled with redirection.
 
 Initial Setup
 ===============
