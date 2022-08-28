@@ -25,7 +25,7 @@ Output
 ======
 Check  the output 2 ways:
 
- 1. Visit https://my.noip.com/dynamic-dns and update A record(IPV4) to the created external IP. This might take few minutes to propage the changes.
+ 1. Visit https://my.noip.com/dynamic-dns and update A record(IPV4) to the created external IP. This might take few minutes to propagate the changes.
  2. SSH into the instance using username and ip/domain
 
 NB: If you want to use your personal domain, you can provision cloud dns( which doesn't comes under free tier) and add the namespaces from it as records in your private dns configuration.
