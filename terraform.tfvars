@@ -1,6 +1,0 @@
-project = "nginx-on-gcp"
-region = "europe-west4"
-user = "shilvy"
-email = "terraform-sa@nginx-on-gcp.iam.gserviceaccount.com"
-website = "devopsfuture.ddns.net"
-scriptpath = "/Users/shilvy/nginx-in-gcp/template/nginx.sh"
