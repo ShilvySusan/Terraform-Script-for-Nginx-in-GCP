@@ -7,8 +7,6 @@ sudo apt install -y python3-certbot-nginx
 sudo ufw --force enable
 sudo ufw allow "Nginx Full"
 sudo ufw allow 22
-#sudo certbot --nginx -n -d devopsworld.ddns.net --redirect --agree-tos --email shilvysamuel@gmail.com
-#sudo service nginx reload
 sudo sh -c "echo 'shilvy soft nofile 30000' >> /etc/security/limits.conf"
 sudo sh -c "echo 'shilvy hard nofile 30000' >> /etc/security/limits.conf"
 sysctl -p
