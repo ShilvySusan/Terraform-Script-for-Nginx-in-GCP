@@ -1,0 +1,6 @@
+terraform.tfstate.backup
+key.json
+terraform-sa.json
+terraform.tfstate.backup
+terraform.tfvars
+terraform.tfstate
