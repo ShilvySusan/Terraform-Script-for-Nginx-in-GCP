@@ -29,9 +29,9 @@ After VM is provisioned :-
       Check both your website domain and generated static ip works with 80/http. If yes, follow the below steps.
    2. Visit https://my.noip.com/dynamic-dns and update A record(IPV4) to the created external IP for free. This might take a few minutes to propagate the changes.
    3. Create ssl certificates with the help of letsencrypt:
-       ***certbot --nginx -n -d <your_domain> --redirect --agree-tos --email shilvysamuel@gmail.com***
+       ***certbot --nginx -n -d <your_domain> --redirect --agree-tos --email <your_email_id>***
        ***service nginx reload***
-       Here --redirect redirects 80 to 443 automatically 
+        --redirect redirects 80 to 443 automatically 
 
 Output
 ======
